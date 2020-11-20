@@ -6,6 +6,7 @@ import { Formik, Form,  Field  } from 'formik';
 import InputMask from "react-input-mask";
 import MaskedInput from 'react-text-mask';
 import ProgressBar from '../shared/Progressbar';
+import swal from "sweetalert";
 import {
   iinValidation,
   required,
@@ -16,6 +17,7 @@ import {
   acceptCirrilic,
   acceptCirrilicOnly,
   validateConfirmPassword,
+  validage,
   getAge,
   requiredd,
   validEmail
@@ -133,8 +135,12 @@ class FormRegister extends React.Component {
       ...values
     }
 
-    // console.log(finalObjects)
-    this.props.postRegistration(finalObjects);
+    if(validage(values.iin) === false) {
+      swal("Oops!", `По внутренним нормативным документам  ТОО "МФО i-redit.kz"  выдача займа осуществляется  лицам достигшим 21-го года и не старше 63-х лет.`, "error");
+    }else {
+      this.props.postRegistration(finalObjects);
+    }
+
   }
 
   handleFocus() {

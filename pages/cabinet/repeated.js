@@ -34,7 +34,6 @@ class Cabinet extends React.Component {
         })
         console.log(response)
         if(response.data.success === false) {
-          console.log('asdasd')
           Router.push('/cabinet')
         }else {
           this.setState ({

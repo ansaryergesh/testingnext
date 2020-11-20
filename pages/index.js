@@ -4,6 +4,7 @@ import ProgressBar from '../components/shared/ProgressBar';
 import bottomBanner from '../img/bottomBanner.png'
 import { Modal, ModalHeader, ModalBody } from 'reactstrap';
 import { useRouter, withRouter } from "next/router";
+import Head from 'next/head'
 import $ from 'jquery'
 var scrollToElement = require('scroll-to-element');
 import Link from 'next/link'
@@ -96,6 +97,11 @@ class Home extends React.Component {
   return (
 
         <div className="">
+          <Head>
+            <title>
+            Деньги в кредит онлайн микрозаймы на карту по Казахстану
+            </title>
+          </Head>
             <div className="view">
             <div className="container">
 
@@ -284,7 +290,7 @@ class Home extends React.Component {
               </div>
             </div>
           </div>
-        </section>,
+        </section>
         <div className="bottom-banner--text ">
           <p className="container">
             Срочно нужны деньги и не у кого одолжить, вы попали в ситуацию потребности средств здесь и прямо сейчас. Предоставляем вашему вниманию сервис получения микрокредитов онлайн не выходя из дома. Быстрое предоставление решения кредитования за 10 минут для физических лиц от 21 до 63 лет.<br></br><br></br>
