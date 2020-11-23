@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link'
 import {Collapse} from 'reactstrap';
+import Head from 'next/head'
 
 var scrollToElement = require('scroll-to-element');
 const AppLink = ({children, className, href}) =>
@@ -34,6 +35,7 @@ class Instruction extends React.Component {
     return (
         <div>
         <section className="otherPages">
+          <Head><title>Способ оплаты</title></Head>
           <div className="otherPages--top hidden">
             <div className="container">
               <h1>Погасить кредит можно <br />одним из следующих способов:</h1>

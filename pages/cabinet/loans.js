@@ -7,6 +7,8 @@ import Spinner from 'react-spinner-material';
 import Router from 'next/router'
 import swal from "sweetalert";
 import axios from 'axios'
+import Head from 'next/head'
+
 const mapStateToProps = state => {
   return {
     userReducer: state.userReducer
@@ -48,6 +50,9 @@ class Cabinet extends React.Component {
   render() {
     return (
       <div className='otherPages'>
+         <Head>
+          <title>Кабинет | Zaymi.kz</title>
+        </Head>
         {this.state.btnLoading ? ( <div className="modelLoader"></div>) : (<div className="modelLoader loaded"></div>)}
         {this.props.userReducer.authenticatingUser === true ? ( <div className="modelLoader"></div>) : (<div className="modelLoader loaded"></div>)}
         <h3 className='text-center'>{helloUser()}   {this.props.userReducer.user.UF_5} {this.props.userReducer.user.UF_6} !</h3>

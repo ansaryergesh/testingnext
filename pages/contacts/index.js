@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link'
-
+import Head from 'next/head'
 const AppLink = ({children, className, href}) =>
   <Link href={href}>
     <a className={className}>{children}</a>
@@ -9,6 +9,7 @@ function Contacts() {
     return (
         <div>
       <section className="otherPages">
+        <Head><title>Контакты</title></Head>
         <div className="otherPages--top">
           <div className="container">
             <h1>Связаться с нами</h1>

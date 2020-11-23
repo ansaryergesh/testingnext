@@ -5,7 +5,6 @@ import bottomBanner from '../img/bottomBanner.png'
 import { Modal, ModalHeader, ModalBody } from 'reactstrap';
 import { useRouter, withRouter } from "next/router";
 import Head from 'next/head'
-import $ from 'jquery'
 var scrollToElement = require('scroll-to-element');
 import Link from 'next/link'
 
@@ -23,7 +22,8 @@ const AppLink = ({children, className, href}) =>
 
 class Home extends React.Component {
   state = {
-    collapse: ""
+    collapse: "",
+    mainMessage: true
   }
 
   toggleCollapse = id => () => {
@@ -36,6 +36,12 @@ class Home extends React.Component {
     }
   }
 
+  mainMessageClose = () => {
+    this.setState({
+      mainMessage:false
+    })
+  }
+
   handleFocus() {
     scrollToElement('.calculator-info', {
       offset: 0,
@@ -45,27 +51,10 @@ class Home extends React.Component {
     });
   }
   componentDidMount() {
-    // var $win = $(window);
+    setTimeout(() => {
+      this.mainMessageClose()
+    },5000)
 
-    // $win.scroll(function () {
-    // if ($(window).width() > 200) {
-    //     if ($win.scrollTop() == 0) {
-    //         scrollToElement('.header-imgs', {
-    //           offset: 0,
-    //           align: 'middle',
-    //           ease: 'outExpo',
-    //           duration: 600
-    //         });
-    //     } else if (!$win.scrollTop() == 0) {
-    //       scrollToElement('.nothing', {
-    //         offset: 0,
-    //         align: 'top',
-    //         ease: 'outExpo',
-    //         duration: 600
-    //       });
-    //     }
-    //   }
-    // });
     if (
       getUrlParameter('utm_source').length>0 &&
       getUrlParameter('utm_medium').length>0 &&
@@ -305,19 +294,24 @@ class Home extends React.Component {
           </p>
         </div>
 
-        <Modal className="modal" isOpen={this.state.collapse === "video1"} toggle={this.toggleCollapse("video1")} id="video1"  size="md">
+        <Modal  isOpen={this.state.collapse === "video1"} toggle={this.toggleCollapse("video1")} id="video1"  size="md">
 				 <ModalBody>
          <iframe  src="https://www.instagram.com/p/CGX1ryJIUY1/embed?autoplay=1" height="500px" width="100%" frameborder="0" scrolling="no" allow="autoplay" allowtransparency="true"></iframe>
 					 </ModalBody>
 				 </Modal>
-         <Modal className="modal" isOpen={this.state.collapse === "video2"} toggle={this.toggleCollapse("video2")} id="video2"  size="md">
+         <Modal  isOpen={this.state.collapse === "video2"} toggle={this.toggleCollapse("video2")} id="video2"  size="md">
 				 <ModalBody>
          <iframe  src="https://www.instagram.com/p/CF7tqQWp98a/embed?autoplay=1" height="500px" width="100%" frameborder="0" scrolling="no" allow="autoplay" allowtransparency="true"></iframe>
 					 </ModalBody>
 				 </Modal>
-         <Modal className="modal" isOpen={this.state.collapse === "video3"} toggle={this.toggleCollapse("video3")} id="video3"  size="md">
+         <Modal  isOpen={this.state.collapse === "video3"} toggle={this.toggleCollapse("video3")} id="video3"  size="md">
 				 <ModalBody>
          <iframe  src="https://www.instagram.com/p/CF7wKQap_3M/embed?autoplay=1" height="500px" width="100%" frameborder="0" scrolling="no" allow="autoplay" allowtransparency="true"></iframe>
+					 </ModalBody>
+				 </Modal>
+         <Modal  isOpen={this.state.collapse === "video3"} toggle={this.toggleCollapse("video3")} id="video3"  size="md">
+				 <ModalBody>
+         <iframe  src="https://www.instagram.com/p/CH0v9xehpWX/embed/?autoplay=1" height="500px" width="100%" frameborder="0" scrolling="no" allow="autoplay" allowtransparency="true"></iframe>
 					 </ModalBody>
 				 </Modal>
         </div>

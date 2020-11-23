@@ -10,6 +10,7 @@ import { connect } from 'react-redux';
 import {loginUser,fetchCurrentUser} from '../store/actions/userAction'
 import Router from 'next/router'
 import {iin, required} from '../defaults/validationredux'
+import Head from 'next/head'
 import cookie from 'js-cookie';
 var scrollToElement = require('scroll-to-element');
 
@@ -75,6 +76,7 @@ class Login extends React.Component {
     return (
       <div>
         <section className="otherPages">
+          <Head><title>Войти в личный кабинет</title></Head>
           <div className="">
             <section className="oplata feedback row">
               <div className=" oplate--form feedbackForm">

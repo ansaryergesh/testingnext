@@ -7,6 +7,8 @@ import ProgressBar from '../../components/shared/Progressbar'
 import Router from 'next/router'
 import swal from "sweetalert";
 import axios from 'axios'
+import Head from 'next/head'
+
 const mapStateToProps = state => {
   return {
     userReducer: state.userReducer
@@ -46,6 +48,9 @@ class Cabinet extends React.Component {
   render() {
     return (
       <div className='otherPages'>
+         <Head>
+            <title>Повторный займ</title>
+          </Head>
           {this.state.btnLoading ? ( <div className="modelLoader"></div>) : (<div className="modelLoader loaded"></div>)}
         <h3 className=' text-center'>{helloUser()}   {this.props.userReducer.user.UF_5} {this.props.userReducer.user.UF_6} !</h3>
         <p className='container mt-3 repeatedinfo alert alert-info'>Выберите срок и сумма. Затем нажмите на кнопку "Получить деньги" чтобы совершить повторный заим</p>

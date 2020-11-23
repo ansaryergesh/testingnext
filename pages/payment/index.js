@@ -74,6 +74,7 @@ class Payment extends React.Component {
     return (
         <div>
              <section className="otherPages">
+               <Head><title>Оплата</title></Head>
         <div className="container">
           <section className="oplata row">
             <div className="col-lg-6 oplata--text mb-5">

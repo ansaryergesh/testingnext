@@ -2,7 +2,7 @@ import React from 'react'
 import Router from 'next/router'
 import axios from 'axios'
 import swal from 'sweetalert'
-
+import Head from 'next/head'
 
 function getUrlParameter(name) {
   name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
@@ -139,7 +139,7 @@ class Aggrement extends React.Component {
         })
 
         if(response.success){
-          swal("Успешно!", `${response.message}`, "success").then(()=>{
+          swal("Успешно!", `${response.data.message}`, "success").then(()=>{
             Router.push('/')
           })
         }
@@ -175,6 +175,7 @@ class Aggrement extends React.Component {
   render() {
     return (
       <div className="container otherPages">
+        <Head><title>Соглашение</title></Head>
         {this.state.loading ? (<div className='modelLoader'></div>) : (<div className='modelLoader loaded'> </div>)}
     <div className="row justify-content-center">
         <div className="col-md-12">
