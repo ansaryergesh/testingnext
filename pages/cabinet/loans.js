@@ -6,8 +6,14 @@ import {helloUser} from '../../defaults/hello'
 import Spinner from 'react-spinner-material';
 import Router from 'next/router'
 import swal from "sweetalert";
-import axios from 'axios'
 import Head from 'next/head'
+import axios from 'axios'
+import Link from 'next/link'
+
+const AppLink = ({children, className, href}) =>
+  <Link href={href}>
+    <a className={className}>{children}</a>
+  </Link>
 
 const mapStateToProps = state => {
   return {
@@ -25,6 +31,9 @@ class Cabinet extends React.Component {
       btnLoading: false
     }
   }
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
   async handleRepeated() {
     this.setState ({
       btnLoading: true
@@ -36,6 +45,12 @@ class Cabinet extends React.Component {
           this.setState ({
             btnLoading: false
           })
+        }
+        if(response.data.success == false) {
+          this.setState({
+            btnLoading: false
+          })
+          swal("Oops!", `${response.data.message || "Заполнение анкета не завершена. свяжитесь с нами по телефону +7 700 750 15 00" } `, "error");
         }
         else {
           console.log(response)
@@ -50,13 +65,14 @@ class Cabinet extends React.Component {
   render() {
     return (
       <div className='otherPages'>
-         <Head>
-          <title>Кабинет | Zaymi.kz</title>
+
+        <Head>
+          <title>Кабинет | I-credit.kz</title>
         </Head>
         {this.state.btnLoading ? ( <div className="modelLoader"></div>) : (<div className="modelLoader loaded"></div>)}
         {this.props.userReducer.authenticatingUser === true ? ( <div className="modelLoader"></div>) : (<div className="modelLoader loaded"></div>)}
-        <h3 className='text-center'>{helloUser()}   {this.props.userReducer.user.UF_5} {this.props.userReducer.user.UF_6} !</h3>
-        <div className='zayavkaBlock container col-md-8 col-8 mt-5'>
+        <p className='welcome text-center'>{helloUser()}   {this.props.userReducer.user.UF_5} {this.props.userReducer.user.UF_6} !</p>
+        <div className='zayavkaBlock container col-md-8 col-11 mt-2'>
           <h5>Мои заявки</h5>
           <h5 className='text-center'>Ваша заявка еще на обработке</h5>
           <div className="repeatBtn form-group" >

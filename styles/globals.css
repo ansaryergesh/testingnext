@@ -114,6 +114,11 @@ body {
   overflow-x: hidden;
 }
 
+.welcome {
+  font-size: calc(18px + (28 - 18) * ((100vw - 320px) / (1600 - 320)));
+  /* font-family: "AvenirNext" !important; */
+}
+
 .center-line {
   text-decoration: line-through;
 }
@@ -213,7 +218,7 @@ ul.complete li:last-child {
   display: none;
 } */
 
-.container-checkbox input:checked ~ .checkmark {
+.container-checkbox input:checked~.checkmark {
   background-color: #2196f3;
 }
 
@@ -395,11 +400,11 @@ input::-ms-track {
   /* margin: auto; */
 }
 
-input:focus ~ div {
+input:focus~div {
   opacity: 1;
 }
 
-select:focus ~ div {
+select:focus~div {
   opacity: 1;
 }
 
@@ -428,8 +433,7 @@ select:focus ~ div {
   left: 0;
   height: 100%;
   width: 100%;
-  background: rgba(255, 255, 255, 0.8)
-    url("https://i.stack.imgur.com/FhHRx.gif") 50% 50% no-repeat;
+  background: rgba(255, 255, 255, 0.8) url("https://i.stack.imgur.com/FhHRx.gif") 50% 50% no-repeat;
 }
 
 .loaded {
@@ -709,9 +713,7 @@ button {
 }
 
 .phone-numbersMov h1 {
-  font-size: calc(
-    12px + (26 - 12) * ((100vw - 320px) / (768 - 320))
-  ) !important;
+  font-size: calc(12px + (26 - 12) * ((100vw - 320px) / (768 - 320))) !important;
 }
 
 .phone-numbers li {
@@ -771,8 +773,7 @@ button {
   margin-right: 15px;
 }
 
-.phone-numbers ul li i a {
-}
+.phone-numbers ul li i a {}
 
 .phone-numbers li .whatsapp {
   display: flex;
@@ -813,11 +814,9 @@ button {
   transform: translateX(-50%);
 }
 
-.modal {
-}
+.modal {}
 
-.modal .calculator-band {
-}
+.modal .calculator-band {}
 
 .calculator-band {
   display: flex;
@@ -1014,8 +1013,7 @@ a,
   border: 1px solid #979797;
   border-radius: 17px;
   background-color: white;
-  padding: 25px calc(15px + (42 - 15) * ((100vw - 320px) / (1600 - 320)))
-    calc(6px + (36 - 6) * ((100vw - 320px) / (1600 - 320)));
+  padding: 25px calc(15px + (42 - 15) * ((100vw - 320px) / (1600 - 320))) calc(6px + (36 - 6) * ((100vw - 320px) / (1600 - 320)));
   padding-bottom: calc(10px + (20 - 10) * ((100vw - 320px) / (1600 - 320)));
   margin-bottom: calc(10px + (20 - 10) * ((100vw - 320px) / (1600 - 320)));
   position: relative;
@@ -1042,9 +1040,7 @@ a,
   letter-spacing: 0.096px;
   line-height: 27px;
   letter-spacing: 0.096px;
-  font-size: calc(
-    14px + (24 - 14) * ((100vw - 320px) / (1600 - 320))
-  ) !important;
+  font-size: calc(14px + (24 - 14) * ((100vw - 320px) / (1600 - 320))) !important;
   padding-right: 15px !important;
 }
 
@@ -1060,9 +1056,7 @@ a,
   content: "+";
   outline: none;
   color: #ef2221;
-  font-size: calc(
-    24px + (48 - 24) * ((100vw - 320px) / (1600 - 320))
-  ) !important;
+  font-size: calc(24px + (48 - 24) * ((100vw - 320px) / (1600 - 320))) !important;
   font-family: "CTCSplachRounded";
 }
 
@@ -1319,6 +1313,7 @@ a,
   transition: 0.3s;
   letter-spacing: 0.5px;
 }
+
 .complaint label h2 {
   font-size: 15px !important;
   margin: 0 !important;
@@ -1371,12 +1366,12 @@ a,
   justify-content: center;
   align-items: center;
 }
+
 .oplata .oplataform .redbtn {
   background-color: #ef2221;
   color: white;
   border: none;
-  padding: calc(12px + (17 - 12) * ((100vw - 720px) / (1600 - 720)))
-    calc(45px + (58 - 45) * ((100vw - 720px) / (1600 - 720)));
+  padding: calc(12px + (17 - 12) * ((100vw - 720px) / (1600 - 720))) calc(45px + (58 - 45) * ((100vw - 720px) / (1600 - 720)));
   border-radius: 7px;
 }
 
@@ -1452,8 +1447,7 @@ a,
   border: 1px solid #979797;
   border-radius: 17px;
   background-color: white;
-  padding: 25px calc(15px + (22 - 15) * ((100vw - 320px) / (1600 - 320)))
-    calc(6px + (36 - 6) * ((100vw - 320px) / (1600 - 320)));
+  padding: 25px calc(15px + (22 - 15) * ((100vw - 320px) / (1600 - 320))) calc(6px + (36 - 6) * ((100vw - 320px) / (1600 - 320)));
   padding-bottom: calc(10px + (15 - 10) * ((100vw - 320px) / (1600 - 320)));
   margin-bottom: calc(10px + (20 - 10) * ((100vw - 320px) / (1600 - 320)));
   position: relative;
@@ -1465,9 +1459,7 @@ a,
   content: "+";
   outline: none;
   color: #ef2221;
-  font-size: calc(
-    34px + (48 - 34) * ((100vw - 320px) / (1600 - 320))
-  ) !important;
+  font-size: calc(34px + (48 - 34) * ((100vw - 320px) / (1600 - 320))) !important;
   font-family: "CTCSplachRounded";
 }
 
@@ -1488,9 +1480,7 @@ a,
   letter-spacing: 0.096px;
   line-height: 27px;
   letter-spacing: 0.096px;
-  font-size: calc(
-    18px + (24 - 18) * ((100vw - 320px) / (1600 - 320))
-  ) !important;
+  font-size: calc(18px + (24 - 18) * ((100vw - 320px) / (1600 - 320))) !important;
 }
 
 .pogasit--instruction {
@@ -1518,8 +1508,7 @@ a,
   display: grid;
   grid-gap: 15px;
   grid-template-columns:
-    calc(105px + (120 - 105) * ((100vw - 767px) / (1600 - 767)))
-    auto;
+    calc(105px + (120 - 105) * ((100vw - 767px) / (1600 - 767))) auto;
 }
 
 .pogasit--otvet {
@@ -2110,6 +2099,7 @@ a:hover {
 }
 
 @media only screen and (max-width: 767px) {
+
   .footerCols:after,
   .footerCols:before {
     display: flex;
@@ -2170,6 +2160,7 @@ a:hover {
   }
 
   @keyframes moving {
+
     from,
     to,
     105% {
@@ -2329,8 +2320,7 @@ a:hover {
   transform: translateX(15%);
 }
 
-.mainbanner {
-}
+.mainbanner {}
 
 .progress-done {
   background: linear-gradient(to left, #ef2221, #cc4040);
@@ -2638,8 +2628,7 @@ input:focus {
     transform: translate(-50%, -20%);
   }
 
-  50% {
-  }
+  50% {}
 }
 
 @keyframes eye-move {
@@ -2703,7 +2692,7 @@ input:focus {
   color: #232323;
 }
 
-.notfound .notfound-404 h1 > span {
+.notfound .notfound-404 h1>span {
   display: inline-block;
   width: 120px;
   height: 120px;
@@ -2760,7 +2749,7 @@ input:focus {
     font-size: 86px;
   }
 
-  .notfound .notfound-404 h1 > span {
+  .notfound .notfound-404 h1>span {
     width: 86px;
     height: 86px;
   }

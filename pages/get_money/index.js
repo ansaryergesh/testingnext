@@ -23,7 +23,6 @@ const handleSteps = step => {
             return (
                 <CodeConfirm
                 />
-
             )
         case 2:
             return (
