@@ -5,6 +5,7 @@ import bottomBanner from '../img/bottomBanner.png'
 import { Modal, ModalHeader, ModalBody } from 'reactstrap';
 import { useRouter, withRouter } from "next/router";
 import Head from 'next/head'
+import cookie from 'js-cookie';
 var scrollToElement = require('scroll-to-element');
 import Link from 'next/link'
 
@@ -42,6 +43,13 @@ class Home extends React.Component {
     })
   }
 
+  testfunc = () => {
+    if(cookie.get('utm_source')) {
+      return true
+    }else{
+      return false
+    }
+  }
   handleFocus() {
     scrollToElement('.calculator-info', {
       offset: 0,
@@ -62,29 +70,29 @@ class Home extends React.Component {
       getUrlParameter('utm_term').length>0 &&
       getUrlParameter('clickid').length>0
     ) {
-      localStorage.clear();
-      localStorage.setItem("utm_source", "qaz");
-      localStorage.setItem("utm_medium", getUrlParameter('utm_medium'));
-      localStorage.setItem("utm_campaign", getUrlParameter('utm_campaign'));
-      localStorage.setItem("utm_term", getUrlParameter('utm_term'));
-      localStorage.setItem("clickid", getUrlParameter('clickid'));
+        if(cookie.get('utm_source') === undefined && getUrlParameter('utm_source').includes('qaz')) {
+          localStorage.clear();
+          cookie.set('utm_source', 'qaz', {expires: 1})
+          cookie.set('utm_medium', getUrlParameter('utm_medium'), {expires: 1})
+          cookie.set('utm_campaign', getUrlParameter('utm_campaign'), {expires: 1})
+          cookie.set('utm_term', getUrlParameter('utm_term'), {expires: 1})
+          cookie.set('clickid', getUrlParameter('clickid'), {expires: 1})
+        }
+
     }
     if(getUrlParameter('utm_source').length>0) {
-      if(getUrlParameter('utm_source').includes('sms')) {
+      if(getUrlParameter('utm_source').includes('sms') && cookie.get('utm_source')=== undefined) {
         localStorage.clear();
-        localStorage.setItem('utm_source', getUrlParameter('utm_source'));
+        // localStorage.setItem('utm_source', getUrlParameter('utm_source'));
+        cookie.set('utm_source', getUrlParameter('utm_source'), {expires: 1})
       }
     }
     else {
     }
   }
-  static getInitialProps({query}) {
-    return {query}
-  }
   render() {
     // console.log(this.props.query)
   return (
-
         <div className="">
           <Head>
             <title>
@@ -110,6 +118,7 @@ class Home extends React.Component {
         </div>
         <section className="calculator container">
           <div className="texts">
+
             <p>Калькулятор микрокредитов</p>
             <p>Льготный период 7 дней</p>
           </div>
