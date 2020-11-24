@@ -24,7 +24,6 @@ const mapStateToProps = state => {
 
 
 class Cabinet extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -64,11 +63,20 @@ class Cabinet extends React.Component {
 
   render() {
     return (
-      <div className='otherPages'>
-
+      <div className='otherPages '>
         <Head>
           <title>Кабинет | I-credit.kz</title>
         </Head>
+        <div className='container'>
+          <nav aria-label=" breadcrumb">
+            <ol className="breadcrumb text-center">
+              <li className="breadcrumb-item "><AppLink className='br-item' href='/cabinet'>Мои данные</AppLink></li>
+
+              <li className="breadcrumb-item active" aria-current="page">Личный кабинет</li>
+            </ol>
+          </nav>
+        </div>
+
         {this.state.btnLoading ? ( <div className="modelLoader"></div>) : (<div className="modelLoader loaded"></div>)}
         {this.props.userReducer.authenticatingUser === true ? ( <div className="modelLoader"></div>) : (<div className="modelLoader loaded"></div>)}
         <p className='welcome text-center'>{helloUser()}   {this.props.userReducer.user.UF_5} {this.props.userReducer.user.UF_6} !</p>
