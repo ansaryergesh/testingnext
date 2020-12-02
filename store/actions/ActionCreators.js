@@ -2,6 +2,8 @@ import * as ActionTypes from '../types'
 import Router from 'next/router'
 import cookie from 'js-cookie';
 import {newCookie} from '../../defaults/utmSource'
+
+
 export const changingMoney = money => ({
     type: ActionTypes.MONEY_CHANGE,
     payload: money,

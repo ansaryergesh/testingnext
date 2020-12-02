@@ -66,7 +66,6 @@ class FormRegister extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleCheck = this.handleCheck.bind(this);
     this.handleFocus = this.handleFocus.bind(this);
-    this.handleTest = this.handleTest.bind(this);
   }
 
   toggleModal() {
@@ -94,30 +93,24 @@ class FormRegister extends React.Component {
     });
   }
 
-  handleTest = (hist) => {
-    hist.push('/thanks')
-  }
-
   handleSubmit(values) {
     console.log(values);
     var other = {};
     other.bank_name = isValidIBANNumber(values.iban_account);
-    var sourceElem = localStorage.getItem('utm-source');
-    var clickidElem = localStorage.getItem('clickid');
-    other.source = 'zaymi.kz'
-    // if(localStorage.getItem('utm_source') && localStorage.getItem('utm_source') !== null) {
-    //   if(localStorage.getItem('utm_source').includes('sms')) {
-    //     other.source = localStorage.getItem('utm_source');
-    //   }
-    //   if(localStorage.getItem('utm_source').includes('qaz')) {
-    //     other.source = 'qazlead';
-    //     other.cpa_source = localStorage.getItem('utm_campaign');
-    //     other.cpa_clickid= localStorage.getItem('clickid');
-    //   }
-    // }
+    other.source = 'i-credit.kz'
     if(cookie.get('utm_source')!== undefined) {
       if(cookie.get('utm_source').includes('sms')) {
         other.source = cookie.get('utm_source')
+      }
+      if(cookie.get('utm_source').includes('loangate')){
+        other.source = cookie.get('utm_source')
+        other.cpa_source = cookie.get('utm_source')
+        other.cpa_clickid = cookie.get('afclick')
+      }
+      if(cookie.get('utm_source') === 'upsala' || cookie.get('utm_source') === 'leadgid' || cookie.get('utm_source')=== 'doaff'){
+        other.source = cookie.get('utm_source')
+        other.cpa_source = cookie.get('utm_source')
+        other.cpa_clickid = cookie.get('clickid')
       }
       if(cookie.get('utm_source').includes('qaz')) {
         other.source = 'qazlead'

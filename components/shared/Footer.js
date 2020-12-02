@@ -18,7 +18,8 @@ const Footer = () => {
               <div className="socials">
                 <p>Мы в соц сетях</p>
                 <div className="socials--icons">
-                <i className="fa fa-facebook" aria-hidden="true" />
+                  <i className="fa fa-facebook" aria-hidden="true" />
+               
                 <a className="instagramIcon" href="https://www.instagram.com/zaymi_kz" target="_blank">
                   <i className="fa fa-instagram" aria-hidden="true"/></a>
                 </div>

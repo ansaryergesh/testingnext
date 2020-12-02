@@ -15,6 +15,7 @@
     "bootstrap": "^4.5.3",
     "cross-env": "^7.0.2",
     "disable-scroll": "^0.5.1",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "font-awesome": "^4.7.0",
     "formik": "^2.2.5",

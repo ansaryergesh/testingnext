@@ -115,9 +115,9 @@ hr {
   padding-top: 100px;
 }
 /* html {
-  filter: invert(100%)
+  filter: invert(95%)
 }
-img:not([src*=".jpg"]),img:not([src*=".svg"]) video, iframe {
+img:not([src*=".jpg"]),img:not([src*=".svg"]) video, iframe, .logo,.fa-facebook,.instagramIcon, .otherPages {
   filter: invert(100%)
 }
 * {
@@ -794,6 +794,7 @@ button {
   margin-right: 15px;
 }
 
+
 .phone-numbers ul li i a {}
 
 .phone-numbers li .whatsapp {
@@ -1137,7 +1138,7 @@ a,
     text-align: center;
   }
 
-  .header-text {
+  .secondary-header {
     display: none !important
   }
 }
@@ -2742,7 +2743,7 @@ table td.r, table th.r {
 }
  
 .imgwhatsapp {
-  height: calc(30px + (40 - 30) * ((100vw - 320px) / (1600 - 320)));
+  height: calc(35px + (40 - 35) * ((100vw - 320px) / (1600 - 320)));
   position: fixed;
   bottom:3%;
   right: 2%;
