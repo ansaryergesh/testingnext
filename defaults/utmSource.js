@@ -68,13 +68,13 @@ export const controlUtm = () => {
       cookie.set('clickid', getUrlParameter('v'), {expires: 30})
     }
   }
-  if(getUrlParameter('utm_source').length>0 && getUrlParameter('clickid').length>0 && getUrlParameter('wmid').length>0) {
+  if(getUrlParameter('utm_source').length>0 && getUrlParameter('clickid').length>0 ) {
     if(getUrlParameter('utm_source') === 'upsala') {
       newCookie()
       localStorage.clear();
       cookie.set('utm_source', getUrlParameter('utm_source'), {expires: 30})
       cookie.set('clickid', getUrlParameter('clickid'), {expires: 30})
-      cookie.set('wmid', getUrlParameter('wmid'), {expires: 30})
+      cookie.set('wmid', 'nothing', {expires: 30})
     }
   }
   if (getUrlParameter('utm_source').length > 0) {
