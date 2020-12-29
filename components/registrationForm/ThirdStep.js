@@ -145,6 +145,18 @@ class FormRegister extends React.Component {
   }
 
   componentDidMount() {
+    
+    $('input').on('focus',function(){
+
+      var prev = $(this).offset().top;
+      var inputHeight = prev-210
+      // var inputHeight=prev.offset().top
+      if(window.innerWidth<=768) {
+          $("html, body").animate({ scrollTop: inputHeight}, 300);
+          return false;
+      }
+    });
+
     $(".cardName")
       .on("keypress", function (event) {
 
