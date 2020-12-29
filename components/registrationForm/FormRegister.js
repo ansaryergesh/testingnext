@@ -152,6 +152,9 @@ class FormRegister extends React.Component {
         duration: 600
       });
     },100)
+  }
+
+  handleInput(e) {
 
   }
 
@@ -160,6 +163,9 @@ class FormRegister extends React.Component {
     progress.style.width = progress.getAttribute('data-done') + '%';
     progress.append(progress.getAttribute('data-done') + "%")
     progress.style.opacity = 1;
+
+
+    
 
     $(document).ready(function () {
       $('input')
@@ -360,6 +366,7 @@ class FormRegister extends React.Component {
                 <Label htmlFor='phone'>Номер телефона * :</Label>
                 <div className="input-group">
                   <Field
+                    type='tel'
                     name='phone'
                     className='form-control'
                     validate={phoneValidation}

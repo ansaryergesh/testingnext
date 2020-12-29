@@ -61,6 +61,10 @@ export const postRegistration = (registration) => (dispatch) => {
     dispatch(emptyMessage());
     dispatch(isLoading(true));
     registration.phone = replaceDate(registration.phone);
+    registration.last_name = registration.last_name || "Нет"
+    if( cookie.get('utm_source').includes('smsrisk')) {
+        registration.risk = 'smsrisk'
+    }
     return fetch(`https://api.money-men.kz/api/registration_step_one`,{
         method: 'POST',
         body: JSON.stringify(registration),
@@ -78,7 +82,6 @@ export const postRegistration = (registration) => (dispatch) => {
             throw response;
         })
         .then(response => response.json())
-        // .then(console.log(response))
         .then(response => dispatch(addRegistration(registration)))
         .then(response => dispatch(isLoading(false)))
         .then(response => dispatch(stepRegistration(1)))

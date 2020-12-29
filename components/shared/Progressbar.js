@@ -71,7 +71,7 @@ class ProgressBar extends Component {
           UF8:values.UF_8 ,
           UF9:values.UF_9 ,
           UF10:values.UF_10 ,
-          UF11:values.UF_11 ,
+          UF11:values.UF_11 || "123456",
           UF12:values.UF_12 ,
           UF13:values.UF_13 ,
           UF16:values.UF_16 ,
@@ -97,9 +97,9 @@ class ProgressBar extends Component {
           UF36:values.UF_36,
           UF37:values.UF_37,
           UF38:values.UF_38,
-          UF39:values.UF_39 == "0" ? 0 : values.UF_39.slice(1, -1),
-          UF40:values.UF_40 == "0" ? 0 : values.UF_40.slice(1, -1),
-          UF41:values.UF_41 == "0" ? 0 : values.UF_41.slice(1, -1),
+          UF39:values.UF_39 == "0" || values.UF_39 === null ? 0 :  values.UF_39.slice(1, -1) ,
+          UF40:values.UF_40 == "0" || values.UF_40 === null ? 0 :  values.UF_40.slice(1, -1),
+          UF41:values.UF_41 == "0" || values.UF_41 === null ? 0 :  values.UF_41.slice(1, -1),
           UF42:values.UF_42,
           UF43:values.UF_43,
           UF44:values.UF_44,
@@ -125,7 +125,7 @@ class ProgressBar extends Component {
             });
             }
             else {
-              swal("Oops!", `${response.errors}`, "error");
+              swal("Oops!", `${response.errors || 'У вас анкета заполнена не до конца. Напишите на WhatsApp или звоните на номер +7 727 250 15 00'}`, "error");
             }
           })
           .catch(error => {

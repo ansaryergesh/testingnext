@@ -2665,22 +2665,22 @@ table td.r, table th.r {
    .lperiod tr td:nth-child(1):before {
     content: "Дата выдачи 📅"
   }
-   .lperiod tr td:nth-child(2):before {
+   /* .lperiod tr td:nth-child(2):before {
     content: "Сумма на руки 💰"
-  }
-   .lperiod tr td:nth-child(3):before {
+  } */
+   .lperiod tr td:nth-child(2):before {
     content: "Дата окончания льготного периода 📅"
   }
-   .lperiod tr td:nth-child(4):before {
+   .lperiod tr td:nth-child(3):before {
     content: "Основной долг 💸"
   }
-   .lperiod tr td:nth-child(5):before {
+   .lperiod tr td:nth-child(4):before {
     content: "Cумма погашения льготный период 💸"
   }
-   .lperiod tr td:nth-child(6):before {
+   .lperiod tr td:nth-child(5):before {
     content: "Сумма задолженности на текущую дату"
   }
-   .lperiod tr td:nth-child(7):before {
+   .lperiod tr td:nth-child(6):before {
     content: "Дата погашения 📅"
   }
 
@@ -2691,18 +2691,18 @@ table td.r, table th.r {
    .vdolge tr td:nth-child(1):before {
     content: "Дата выдачи 📅"
   }
-   .vdolge tr td:nth-child(2):before {
+   /* .vdolge tr td:nth-child(2):before {
     content: "Сумма на руки 💰"
-  }
+  } */
 
-   .vdolge tr td:nth-child(3):before {
+   .vdolge tr td:nth-child(2):before {
     content: "Основной долг 💸"
   }
 
-   .vdolge tr td:nth-child(4):before {
+   .vdolge tr td:nth-child(3):before {
     content: "Сумма задолженности на текущую дату"
   }
-   .vdolge tr td:nth-child(5):before {
+   .vdolge tr td:nth-child(4):before {
     content: "Дата погашения 📅"
   }
 
@@ -2761,23 +2761,43 @@ table td.r, table th.r {
   border-radius: 10px;
   animation: loading 0.8s infinite; 
 }
- 
-.imgwhatsapp {
-  height: calc(35px + (40 - 35) * ((100vw - 320px) / (1600 - 320)));
+ .chatBlock {
   position: fixed;
-  bottom:3%;
-  right: 2%;
-  animation: pulse 2s infinite;
-  border-radius: calc(8px + (15 - 8) * ((100vw - 320px) / (1600 - 320)));
+  bottom:9%;
+  right: 0%;
+  background-color: #f1e8e88f;
+  -webkit-box-shadow: 0px 2px 2.5px 0px rgb(7, 7, 7)!important;
+  -moz-box-shadow:    0px 2px 2.5px 0px rgb(0, 0, 0)!important;
+  box-shadow:         0px 2px 2.5px 0px rgb(0, 0, 0)!important;
+  border-radius: calc(22px + (25 - 22) * ((100vw - 320px) / (1600 - 320))) 0px 0px calc(22px + (30 - 22) * ((100vw - 320px) / (1600 - 320)));
   z-index: 11111111111;
+  animation: pulse 2.5s infinite;
+  display: flex;
+  flex-direction: column;
+  
+  padding: 8px 2px 8px 10px;
+ }
+.imgwhatsapp {
+  height: calc(30px + (32 - 30) * ((100vw - 320px) / (1600 - 320)));
+  /* position: fixed;
+  bottom:3%;
+  right: 2%; */
+  border: 50x solid rgb(197, 204, 223)!important; 
+  border-radius: 8px;
+  /* border-radius: calc(22px + (25 - 22) * ((100vw - 320px) / (1600 - 320))); */
+
+  cursor: pointer;
+}
+
+.imgwhatsapp:first-child {
 }
 
 @-webkit-keyframes pulse {
   0% {
-    -webkit-box-shadow: 0 0 0 0 rgba(18, 143, 18, 0.4);
+    -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.192);
   }
   70% {
-      -webkit-box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+      -webkit-box-shadow: 0 0 0 8px rgba(204,169,44, 0);
   }
   100% {
       -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
@@ -2785,18 +2805,19 @@ table td.r, table th.r {
 }
 @keyframes pulse {
   0% {
-    -moz-box-shadow: 0 0 0 0 rgba(18, 143, 18, 0.4);
-    box-shadow: 0 0 0 0 rgba(18, 143, 18, 0.4);
+    -moz-box-shadow: 0 0 0 0 rgba(18, 143, 18, 0.233);
+    box-shadow: 0 0 0 0 rgba(18, 143, 18, 0.212);
   }
   70% {
-      -moz-box-shadow: 0 0 0 10px rgba(204,169,44, 0);
-      box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+      -moz-box-shadow: 0 0 0 8px rgba(204,169,44, 0);
+      box-shadow: 0 0 0 8px rgba(204,169,44, 0);
   }
   100% {
       -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
       box-shadow: 0 0 0 0 rgba(204,169,44, 0);
   }
 }
+
 
 @-webkit-keyframes phoneErrorPulse {
   0% {

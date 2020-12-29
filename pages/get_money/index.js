@@ -11,6 +11,7 @@ import {stepRegistration, emptyMessage,errorMessage} from '../../store/actions/A
 import { connect } from 'react-redux';
 import $ from 'jquery'
 import { actions } from 'react-redux-form'
+var scrollToElement = require('scroll-to-element');
 const labels = [ 'Регистрация', 'Заполнения анкеты', 'Отправка анкеты',  ];
 const handleSteps = step => {
     switch (step) {
@@ -67,6 +68,17 @@ class FormStep extends React.Component {
         registrationStep: 0
     }
     componentDidMount() {
+        
+        $('input').on('focus',function(){
+
+            var prev = $(this).offset().top;
+            var inputHeight = prev-210
+            // var inputHeight=prev.offset().top
+            if(window.innerWidth<=768) {
+                $("html, body").animate({ scrollTop: inputHeight}, 300);
+                return false;
+            }
+         });
         if(localStorage.getItem('step')) {
             this.setState({
                 registrationStep: localStorage.getItem('step')

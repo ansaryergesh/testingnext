@@ -23,7 +23,9 @@ class MyDocument extends Document {
           <Main />
           <NextScript />
           <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176299351-1"></script>
+          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-69923231-2"></script>
           <script src="/js/myscript.js"></script>
+          <script src="/js/otslejivat.js"></script>
           <script type="text/javascript" src="/js/myscript2.js"></script>
           <noscript>
             <div>

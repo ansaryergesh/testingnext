@@ -107,14 +107,30 @@ class FormRegister extends React.Component {
         other.cpa_source = cookie.get('utm_source')
         other.cpa_clickid = cookie.get('afclick')
       }
-      if(cookie.get('utm_source') === 'upsala' || cookie.get('utm_source') === 'leadgid' || cookie.get('utm_source')=== 'doaff'){
+      if(cookie.get('utm_source') === 'upsala' || cookie.get('utm_source') === 'leadgid' || cookie.get('utm_source').includes('doaff')){
         other.source = cookie.get('utm_source')
         other.cpa_source = cookie.get('utm_source')
         other.cpa_clickid = cookie.get('clickid')
       }
       if(cookie.get('utm_source').includes('qaz')) {
-        other.source = 'qazlead'
+        other.source = 'qazlead';
         other.cpa_source = cookie.get('utm_campaign');
+        other.cpa_clickid= cookie.get('clickid');
+      }
+      if(cookie.get('utm_source').includes('marketing')) {
+        other.source = cookie.get('utm_source')
+        other.cpa_source = cookie.get('utm_source')
+        other.cpa_clickid = cookie.get('clickid')
+      }
+      if(cookie.get('utm_source').includes('smartzaim')) {
+        other.source = cookie.get('utm_source');
+        other.cpa_source = cookie.get('utm_source');
+        other.utm_campaign = cookie.get('utm_campaign')
+        other.utm_term = 'smartzaim'
+      }
+      if(cookie.get('utm_source').includes('click2money')) {
+        other.source = cookie.get('utm_source');
+        other.cpa_source = cookie.get('utm_source');
         other.cpa_clickid= cookie.get('clickid');
       }
     }
